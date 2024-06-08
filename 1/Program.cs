@@ -46,14 +46,14 @@
 //c1.dec();
 //Console.WriteLine(c1.Count);
 
-Solution solution = new Solution();
-solution.Add(new Train { Dest = "Москва", Number = 3, TimeDep = DateTime.Parse("12:30") });
-solution.Add(new Train { Dest = "Волгоград", Number = 5, TimeDep = DateTime.Parse("11:30") });
-solution.Add(new Train { Dest = "Калининград", Number = 8, TimeDep = DateTime.Parse("12:00") });
-solution.Add(new Train { Dest = "Санкт-Питербург", Number = 4, TimeDep = DateTime.Parse("9:15") });
-solution.Print();
-Console.Write("Введите номер поезда: ");
-int n = int.Parse(Console.ReadLine());
-solution.Find(n).Print();
-solution.PrintByDest();
+//Solution solution = new Solution();
+//solution.Add(new Train { Dest = "Москва", Number = 3, TimeDep = DateTime.Parse("12:30") });
+//solution.Add(new Train { Dest = "Волгоград", Number = 5, TimeDep = DateTime.Parse("11:30") });
+//solution.Add(new Train { Dest = "Калининград", Number = 8, TimeDep = DateTime.Parse("12:00") });
+//solution.Add(new Train { Dest = "Санкт-Питербург", Number = 4, TimeDep = DateTime.Parse("9:15") });
+//solution.Print();
+//Console.Write("Введите номер поезда: ");
+//int n = int.Parse(Console.ReadLine());
+//solution.Find(n).Print();
+//solution.PrintByDest();
 
