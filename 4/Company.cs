@@ -17,8 +17,16 @@ namespace _4
 
         public Person this[int index]
         {
-            get => personal![index];
-            set => personal![index] = value;
+            get
+            {
+                if (index >= 0 && index < personal!.Length)
+                    return personal![index];
+                else throw new ArgumentOutOfRangeException();
+            }
+            set
+            {
+                if (index >= 0 && index < personal!.Length) personal![index] = value;
+            }
         }
     }
 }
