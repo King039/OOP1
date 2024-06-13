@@ -8,29 +8,60 @@ namespace _3
 {
     internal class ScladPilomaterialov
     {
-        private double sklad;
+        private int number;
         private string fio;
-        private double maxVolum;
+        private double maxVolume;
         private double current;
 
-        public double Sklad
+        public int Number
         {
-            get { return sklad; }
-            set { sklad = value; }
+            get { return number; }
+            set { number = value; }
         }
-        public double MaxVolum
+
+        public double MaxVolume
         {
-            get { return maxVolum; }
-            set { maxVolum = value; }
+            get { return maxVolume; }
+            set { if (value > 0) maxVolume = value; 
+                else throw new Exception("Введите правильный обьем!"); }
         }
+
         public string Fio
         {
             get { return fio; }
             set { fio = value; }
         }
-        public void ColMaterials()
+        public double Current
         {
-            return maxVolum - current;
+            get { return current; }
+            set
+            {
+                if (value > maxVolume - current)
+                {
+                    current = maxVolume;
+                    Console.WriteLine("Склад перегружен!!!");
+                }
+                else if (current + value < 0)
+                {
+                    Console.WriteLine("Недостаток на складе!!!");
+                }
+                else current += value;
+            }
+        }
+
+        public void Sub(double valume)
+        {
+            Current = -valume;
+        }
+
+        public void Add(double valume)
+        {
+            Current = valume;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"На складе осталось {maxVolume - current:F2}. Материала на складе {current:F2}.");
         }
     }
 }
